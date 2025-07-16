@@ -1,0 +1,15 @@
+services:
+  plex_lang_selection:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: plex_lang_selection
+    environment:
+      # Plex variables
+      PLEX_URL: ""
+      PLEX_TOKEN: ""
+      PLEX_LIBRARY: "Animes"
+      AUDIO_LANG: "Japanese"
+      SUB_LANG: "French"
+      MAX_WORKERS: "5"
+    restart: no
