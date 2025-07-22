@@ -40,7 +40,7 @@ def process_season(season):
                         break
                 # Set subtitle stream only if not already selected
                 for subtitle in part.subtitleStreams():
-                    if subtitle.language == SUB_LANG and not any(substring in subtitle.extendedDisplayTitle for substring in ['forced', 'forcé']):
+                    if subtitle.language == SUB_LANG and not any(substring in subtitle.extendedDisplayTitle.lower() for substring in ['forced', 'forcé']):
                         if not subtitle.selected:
                             changed = True
                             part.setSelectedSubtitleStream(subtitle)
